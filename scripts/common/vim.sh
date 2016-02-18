@@ -48,4 +48,4 @@ cd ~/.vim/bundle/YouCompleteMe
 python install.py --clang-completer --gocode-completer
 
 # Fetch real vimrc
-curl -s https://gist.githubusercontent.com/saelo/da3e5ad7c6885472b1f0/raw/.vimrc > ~/.vimrc
+curl -s https://gist.githubusercontent.com/Smuerdt/e2072fddce20452ae762/raw/.vimrc > ~/.vimrc

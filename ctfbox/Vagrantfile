@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "ctfbox"
 
-  config.vm.network "public_network"
+  #config.vm.network "public_network"
 
   # Configure SSH access.
   config.ssh.username = "vagrant"
@@ -20,12 +20,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Bump up the specs a bit
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "4096"]
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
     vb.customize ["modifyvm", :id, "--cpus", "4"]
   end
 
   # Share CTF folder
-  #config.vm.synced_folder "~/Desktop/ctf", "/home/vagrant/ctf"
+  config.vm.synced_folder "~/workspace/ctf/vagrant-share", "/home/vagrant/ctf"
 
   # Do some basic provisioning.
   config.vm.provision "shell", path: "../scripts/debian/upgrade.sh"
